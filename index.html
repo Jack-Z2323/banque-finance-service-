@@ -1,0 +1,853 @@
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANQUE 🏦 FINANCE - Services de prêt</title>
+    <style>
+
+
+
+
+/* Styles pour le formulaire uniquement */
+#contact-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(17, 4, 133, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Styles pour chaque groupe de champ */
+#contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+#contact-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #3318ac;
+}
+
+/* Champs de saisie */
+#contact-form input, 
+#contact-form select, 
+#contact-form textarea {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border 0.3s ease;
+}
+
+/* Focus sur les champs */
+#contact-form input:focus, 
+#contact-form select:focus, 
+#contact-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Champ de texte (textarea) */
+#contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+#contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #310a9c;
+}
+
+/* Bouton d'envoi */
+#contact-form button {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet hover sur le bouton */
+#contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive (pour mobile) */
+@media (max-width: 600px) {
+    #contact-form {
+        padding: 15px;
+    }
+
+    #contact-form button {
+        width: 100%;
+    }
+}
+
+.team-member {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+}
+
+.member-img {
+    width: 100px;  /* Largeur du carré */
+    height: 100px; /* Hauteur du carré */
+    overflow: hidden;  /* Cache tout ce qui dépasse du carré */
+    border-radius: 50%;  /* Pour rendre l'image ronde si besoin */
+    margin: 0 auto 15px;  /* Centrer l'image */
+}
+
+.member-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* L'image s'adapte au carré sans déformation */
+}
+
+
+
+
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: #1a237e;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background-color: #283593;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            color: #1a237e;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .hero {
+            background-color: #e8eaf6;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #1a237e;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #283593;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .member-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 20px auto;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+color: #9e9e9e;
+        }
+        
+        .testimonials {
+            margin-top: 40px;
+        }
+        
+        .testimonial {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(70, 24, 24, 0.1);
+        }
+        
+        .testimonial-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #9e9e9e;
+            flex-shrink: 0;
+        }
+        
+        .testimonial-content {
+            flex-grow: 1;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #1a237e;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #283593;
+        }
+        
+        footer {
+            background-color: #1a237e;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            border-bottom: 2px solid #3949ab;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #3949ab;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #5c6bc0;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #3949ab;
+        }
+        
+        /* Styles pour le carrousel */
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .carousel {
+            display: flex;
+animation: scroll 30s linear infinite;
+            width: calc(250px * 15);
+        }
+        
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 200px;
+            margin-right: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+        
+        .carousel-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .proof-img {
+            font-size: 80px;
+            text-align: center;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-250px * 7.5));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .testimonial {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .testimonial-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .carousel {
+                width: calc(200px * 15);
+            }
+            
+            .carousel-item {
+                width: 200px;
+                height: 150px;
+            }
+            
+            .proof-img {
+                font-size: 60px;
+            }
+        }
+    
+
+
+    </style>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">BANQUE 🏦 FINANCE</div>
+                <ul class="nav-links">
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Notre équipe</a></li>
+                    <li><a href="#testimonials">Témoignages</a></li>
+                    <li><a href="#preuve">Preuve</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Solutions financières sur mesure</h1>
+            <p>Nous vous accompagnons dans tous vos projets avec des prêts de financement adaptées à vos besoins.</p>
+            <a href="#contact" class="btn">Contactez-nous</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>À propos de nous</h2>
+            <p>BANQUE 🏦 FINANCE est une institution financière spécialisée dans les prêts et services financiers pour particuliers et entreprises. Avec plus de 15 ans d'expérience dans le secteur, nous nous engageons à offrir des solutions personnalisées et des conseils professionnels pour répondre à tous vos besoins financiers.</p>
+            <p>Notre mission est de faciliter l'accès au financement et d'accompagner nos clients dans la réalisation de leurs projets, qu'il s'agisse d'un achat immobilier, du développement d'une entreprise ou de la concrétisation d'un projet personnel.</p>
+            <p>Nos valeurs : transparence, confiance, excellence et proximité. Nous plaçons la satisfaction de nos clients au cœur de notre démarche et nous nous efforçons d'établir des relations durables basées sur la confiance mutuelle.</p>
+        </div>
+    </section>
+
+    <section id="Service">
+        <div class="container">
+            <h2>NOS SERVICE </h2>
+            <p>Découvrez notre gamme complète de services financiers conçus pour répondre à vos besoins spécifiques.</p>
+            
+            <div class="services">
+                
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Prêts personnels</h3>
+                        <p>Réalisez vos projets personnels avec nos offres de financement avantageuses.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Prêts professionnels</h3>
+                        <p>Développez votre activité avec nos solutions de financement pour entreprises et indépendants.</p>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Conseil financier</h3>
+                        <p>Bénéficiez de l'expertise de nos conseillers pour optimiser votre stratégie financière et patrimoniale.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Assurance emprunteur</h3>
+                        <p>Protégez-vous et sécurisez votre prêt avec nos offres d'assurance sur mesure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="container">
+            <h2>NOTRE EQUIPE </h2>
+            <p>Une équipe de professionnels expérimentés à votre service pour vous accompagner dans tous vos projets financiers.</p>
+            
+            <div class="team">
+                <div class="team-member">
+                    <div class="member-img"><img src="GG.jpg" alt="Jean Laurent" style="width: 100px; height: 150px;"></div>
+               
+                    <div class="team-member">
+                        <h3>Jean Laurent</h3>
+                        <p>Directrice Générale</p>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="team-member">
+                    <div class="member-img"><img src="FF.png" alt="Nathali Ulmine" style="width: 100px; height: 150px;"></div>
+                    <div class="member-content">
+                        <h3>Nathali Ulmine</h3>
+                        <p>Conseillère financière</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img"><img src="DD.jpg" alt="Ouattara Dine" style="width: 100px; height: 150px; ;"></div>
+                    <div class="member-content">
+                        <h3>Ouattara Dine</h3>
+                        <p>Expert en prêts professionnels</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>TEMOIGNAGE </h2>
+            <p>Découvrez ce que nos clients disent de nos services.</p>
+
+
+<div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-img"><img src="a.jpg" alt="Nathali Ulmine" style="width: 150px; height: 140px; ;"></div>
+                    <div class="testimonial-content">
+                        <h3>Judithe TRAORE </h3>
+                        <p>Je tiens à remercier toute l'équipe de BANQUE FINANCE pour leur professionnalisme et leur réactivité. Grâce à eux, j'ai pu acquérir ma résidence principale dans des délais très courts et avec des conditions de financement avantageuses.</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-img"><img src="fv.jpg" alt="Nathali Ulmine" style="width: 150px; height: 140px; "></div>
+                    <div class="testimonial-content">
+                        <h3>Marie Lambert</h3>
+                        <p>Un grand merci à mon conseiller qui a su m'accompagner avec patience et bienveillance dans mon projet d'investissement locatif. Je recommande vivement BANQUE FINANCE pour leur expertise et leur suivi personnalisé.</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-img"><img src="BH.jpg" alt="Nathali Ulmine" style="width: 150px; height: 140px; "></div>
+                    <div class="testimonial-content">
+                        <h3>Laurent ADIFA </h3>
+                        <p>Je remercie BANQUE FINANCE pour leur aide précieuse dans le financement de mon entreprise. Leur approche personnalisée et leur compréhension de mes besoins ont fait toute la différence. Je suis très satisfait des services proposés.</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-img"><img src="qs.jpg" alt="Nathali Ulmine" style="width: 150px; height: 140px; "></div>
+                    <div class="testimonial-content">
+                        <h3>Céline Dupont</h3>
+                        <p>Merci infiniment à l'équipe de BANQUE FINANCE qui m'a permis de regrouper mes crédits et de retrouver une situation financière saine. Leur professionnalisme et leur écoute ont été déterminants dans la réussite de mon projet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="preuve">
+        <div class="container">
+            <h2>Preuve</h2>
+            <p>Découvrez quelques preuves de nos réalisations et des projets que nous avons financés.</p>
+            
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item"><div class="proof-img"><img src="cc.jpg" alt="Nathali Ulmine" style="width: 250px;  "></div></div>
+                    <div class="carousel-item"><div class="proof-img"><img src="hh.jpg" alt="Nathali Ulmine" style="width: 200px;"></div></div>
+                    <div class="carousel-item"><div class="proof-img"><img src="vv.jpg" alt="Nathali Ulmine" style="width: 200px;  "></div></div>
+                    <div class="carousel-item"><div class="proof-img"><img src="RR.jpg" alt="Nathali Ulmine" style="width: 200px;  "></div></div>
+                    <div class="carousel-item"><div class="proof-img"><img src="jj.jpg" alt="Nathali Ulmine" style="width: 200px; "></div></div>
+                    <div class="carousel-item"><div class="proof-img"><img src="c.jpg" alt="Nathali Ulmine" style="width: 250px;"></div></div>
+                    <div class="carousel-item"><div class="proof-img"><img src="nn.jpg" alt="Nathali Ulmine" style="width: 200px;  "></div></div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>CONTACTEZ-NOUS</h2>
+            <form id="contact-form">
+                <input type="hidden" name="_subject" value="Nouveau message de BANQUE FINANCE">
+
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Pays">Pays</label>
+                    <input type="text" id="Pays" name="Pays" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Montant">Montant</label>
+                    <input type="tel" id="Montant" name="Montant" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Duree">Durée de remboursement</label>
+                    <input type="text" id="Duree" name="Duree" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Frais">Frais de Dossier</label>
+                    <input type="text" id="Frais" name="Frais" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Gmail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service souhaité</label>
+                    <select id="service" name="service" required>
+                        <option value="">Sélectionnez un service</option>
+                        <option value="Prêt personnel">Prêt personnel</option>
+                        <option value="Prêt professionnel">Prêt professionnel</option>
+                        <option value="Conseil financier">Conseil financier</option>
+                        <option value="Assurance emprunteur">Assurance emprunteur</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("7qZ1EMIeZPdejknh4");
+        })();
+
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let params = {
+                to_email: "jackjuicyz23@gmail.com",
+                name: document.getElementById("name").value,
+                Pays: document.getElementById("Pays").value,
+                Montant: document.getElementById("Montant").value,
+                Duree: document.getElementById("Duree").value,
+                Frais: document.getElementById("Frais").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                service: document.getElementById("service").value,
+                message: document.getElementById("message").value
+            };
+
+            emailjs.send("service_hicy17t", "template_cczqaog", params)
+            .then(function(response) {
+                alert("Message envoyé avec succès !");
+                document.getElementById("contact-form").reset();
+            }, function(error) {
+                alert("Erreur lors de l'envoi du message.");
+                console.log(error);
+            });
+        });
+        /* Global Styles */
+  
+
+    </script>
+ 
+                </section>
+            
+                <footer>
+                    <div class="container">
+                        <div class="footer-content">
+                            <div class="footer-section">
+                                <h3>BANQUE 🏦 FINANCE</h3>
+                                <p>Des solutions financières adaptées à vos besoins.</p>
+                            </div>
+                            
+                            <div class="footer-section">
+                                <h3>Contact</h3>
+                                <ul class="contact-info">
+                                    <li>123 Avenue des Finances</li>
+                                    <li>75000 Paris, France</li>
+                                    <li>Burkina Faso, bobo Dioulasso</li>
+                                    <li>Tél: +226 67 07 59 88</li>
+                                    <li>Email: banquesuissebear17@gmail.com</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="footer-section">
+                                <h3>Liens rapides</h3>
+                                <ul class="contact-info">
+                                    <li><a href="#about" style="color: white;">À propos</a></li>
+                                    <li><a href="#services" style="color: white;">Services</a></li>
+                        <li><a href="#team" style="color: white;">Notre équipe</a></li>
+                        <li><a href="#testimonials" style="color: white;">Témoignages</a></li>
+                        <li><a href="#preuve" style="color: white;">Preuve</a></li>
+                        <li><a href="#contact" style="color: white;">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2020 BANQUE FINANCE. </p>
+            </div>
+        </div>
+    </footer>
